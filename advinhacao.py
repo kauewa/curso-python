@@ -1,10 +1,28 @@
 #Inicio
+import random
+
 print ("jogo de advinhação!")
 
 #Variáveis iniciais
-numero_chave = 42
-total_de_tentativas = 3
+numero_chave = random.randrange(1,101)
+print("Qual nível de dificuldade você quer?")
+print("(1) fácil (2) médio (3) díficil")
+
+nivel = int(input("Defina o nível: "))
+facil = 1
+medio = 2
+dificil = 3
+
+    
+if(nivel == facil):
+    total_de_tentativas = 20
+elif(nivel == medio):
+    total_de_tentativas = 10
+else:
+    total_de_tentativas = 5
+
 rodada = 1
+
 
 #Processamento
 for rodada in range(1, total_de_tentativas + 1):

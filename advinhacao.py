@@ -5,6 +5,7 @@ print ("jogo de advinhação!")
 
 #Variáveis iniciais
 numero_chave = random.randrange(1,101)
+pontos = 1000
 print("Qual nível de dificuldade você quer?")
 print("(1) fácil (2) médio (3) díficil")
 
@@ -21,7 +22,6 @@ elif(nivel == medio):
 else:
     total_de_tentativas = 5
 
-rodada = 1
 
 
 #Processamento
@@ -46,6 +46,7 @@ for rodada in range(1, total_de_tentativas + 1):
     #Checagem do acerto
     if(acertou):
         print("Você acertou!")
+        print("Você fez {} pontos!".format(pontos))
         break
     else:
         if(maior):
@@ -53,6 +54,8 @@ for rodada in range(1, total_de_tentativas + 1):
         if(menor):
             print("seu chute foi menor que o número secreto!")
         print("Errrooooouuuuuu!")
+        pontos_perdidos = abs(numero_chave - chute)
+        pontos = pontos - pontos_perdidos
 
 
 print("fim de jogo")
